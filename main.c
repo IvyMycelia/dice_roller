@@ -9,10 +9,13 @@ int main(int argc, char* argv[]) {
     if (!amount || amount < 0) { printf("Usage:\n\t<executable> [numberOfRolls]"); return -1; }
     srand(time(NULL));
 
+    char* B_YELLOW = "\x1b[1;33m";
+    char* CYAN = "\x1b[36m";
+
     int i = 0;
     for (i; i < amount; i++) {
         int ran = (rand() % 6) + 1;
-        printf("You rolled..\t%d!\n", ran);
+        printf("%sYou rolled..%s\t%d!\n", B_YELLOW, CYAN, ran);
     }
     return 0;
 }
